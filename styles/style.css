@@ -69,7 +69,7 @@ button:disabled {
 
 .header__title {
   margin-block-end: 40px;
-  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vi, 7.5rem);
 }
 
 .header__menu {
@@ -113,9 +113,13 @@ button:disabled {
   z-index: -1;
   inline-size: calc(100% + 8px);
   block-size: 0.5ch;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
   inset-block-end: 0.3ch;
   inset-inline-start: -4px;
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(../images/pattern.svg);
 }
 
 .content__title {
@@ -138,7 +142,6 @@ button:disabled {
 .content__blockquote {
   inline-size: 75%;
   margin: 0 auto 1.5em;
-  font-size: 18px;
   font-style: italic;
   line-height: 2;
 }
@@ -169,6 +172,10 @@ button:disabled {
   inset-block-start: 50%;
 }
 
+.theme_dark .content__list li::before {
+  background-image: url(../images/marker-dark.svg);
+}
+
 .content__text-block_type_first-lettered
   .content__paragraph:first-of-type::first-letter {
   display: inline-block;
@@ -176,7 +183,13 @@ button:disabled {
   padding: 0 4px;
   font-weight: 700;
   font-size: 30px;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
+}
+
+.theme_dark
+  .content__text-block_type_first-lettered
+  .content__paragraph:first-of-type::first-letter {
+  border: 1px solid currentColor;
 }
 
 .content__picture {
@@ -226,9 +239,13 @@ button:disabled {
   z-index: -1;
   inline-size: calc(100% + 8px);
   block-size: 0.5ch;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
   inset-block-end: 0.3ch;
   inset-inline-start: -4px;
+}
+
+.theme_dark .colored-text::after {
+  background-image: url(../images/pattern.svg);
 }
 
 .footer {
@@ -240,22 +257,4 @@ button:disabled {
 
 .footer__copyright {
   font-size: 18px;
-}
-
-.theme_dark .colored-text::after {
-  background-image: url(../images/pattern.svg);
-}
-
-.theme_dark .header__theme-button_is-active::after {
-  background-image: url(../images/pattern.svg);
-}
-
-.theme_dark
-  .content__text-block_type_first-lettered
-  .content__paragraph:first-of-type::first-letter {
-  border: 1px solid currentColor;
-}
-
-.theme_dark .content__list li::before {
-  background-image: url(../images/marker-dark.svg);
 }
